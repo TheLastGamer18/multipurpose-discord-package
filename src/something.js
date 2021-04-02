@@ -56,7 +56,7 @@ module.exports = {
     }
   },
   
-  fetchQuotes: async() => {
+  fetchQuote: async() => {
     let json = await fetch("https://jastinch-api.ml/quotes");
     let quotes = await json.json();
     
