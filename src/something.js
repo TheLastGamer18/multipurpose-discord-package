@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 
-module.exports = {
+class Something {
   
-  fetchAdvice: async() => {
+  async fetchAdvice() {
     let json = await fetch("https://api.adviceslip.com/advice");
     let advice = await json.json();
     
@@ -11,9 +11,9 @@ module.exports = {
     }
     
     return advice.slip.advice;
-  },
+  }
   
-  fetchJoke: async() => {
+  async fetchJoke() {
     let json = await fetch("https://jastinch-api.ml/randomjoke");
     let joke = await json.json();
     
@@ -25,9 +25,9 @@ module.exports = {
       setup: joke.setup,
       punchline: joke.punchline
     }
-  },
+  }
   
-  fetchLyrics: async(song) => {
+  async fetchLyrics(song) {
     if(!song) {
       throw new Error("[SRP] Provide a song name for it to work.")
     }
@@ -40,9 +40,9 @@ module.exports = {
     }
     
     return lyrics.lyrics;
-  },
+  }
 
-  fetchMeme: async() => {
+  async fetchMeme() {
     let json = await fetch("https://jastinch-api.ml/meme");
     let meme = await json.json();
     
@@ -54,9 +54,9 @@ module.exports = {
       url: meme.urlimg,
       title: meme.caption
     }
-  },
+  }
   
-  fetchQuote: async() => {
+  async fetchQuote() {
     let json = await fetch("https://jastinch-api.ml/quotes");
     let quotes = await json.json();
     
@@ -65,20 +65,20 @@ module.exports = {
     };
     
     return quotes.quote;
-  },
+  }
   
-  fetchNeko: async() => {
+  async fetchNeko() {
     let json = await fetch("https://neko-love.xyz/api/v1/neko");
     let neko = await json.json();
     
-    if(!neko.code !== 200) {
+    if(!neko) {
       throw new Error("[SRP] API Unavailable. Try again later.")
     };
     
     return neko.url;
-  },
+  }
   
-  fetchNekoGif: async() => {
+  async fetchNekoGif() {
     let json = await fetch("https://nekos.life/api/v2/img/ngif");
     let neko = await json.json();
     
@@ -87,9 +87,9 @@ module.exports = {
     };
     
     return neko.url;
-  },
+  }
   
-  fetchNSFWNeko: async() => {
+  async fetchNSFWNeko() {
     let json = await fetch("https://jastinch-api.ml/nsfwneko");
     let neko = await json.json();
     
@@ -98,9 +98,9 @@ module.exports = {
     };
     
     return neko.urlimg;
-  },
+  }
   
-  fetchNSFWNekoGif: async() => {
+  async fetchNSFWNekoGif() {
     let json = await fetch("https://nekos.life/api/v2/img/nsfw_neko_gif");
     let neko = await json.json();
     
@@ -112,3 +112,5 @@ module.exports = {
   }
   
 }
+
+module.exports = Something;
