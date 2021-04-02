@@ -1,8 +1,10 @@
-# A package that is helpful in bot making!
-- Make commands easily using this package!
+# A package that is helpful in bot making! Make commands easily using this package!
 
-# How To Install:
-- `npm i some-random-package`
+# Note:
+- If you are facing any type of bugs with any of the methods, report it [here](https://github.com/TheLastGamer18/multipurpose-discord-package/issues).
+
+# Reasons to use this package!
+- This package will work with any version! Because the methods return only the data, and how to represent that data is depended upon you!  
 
 # Example
 ```javascript
@@ -47,43 +49,43 @@ client.login("Your Token Here");
 # All methods.
 <br>
 
-## fetchAdvice(): Returns random advice.
+<b>fetchAdvice()</b>: Returns random advice.
 ```javascript
    let data = await something.fetchAdvice()
    message.channel.send(data)
 ```
 
-## fetchJoke(): Returns random joke. Data is fetched in the form of fetchJoke().setup (Setup of the joke) and fetchJoke().punchline (Punchline of the joke).
+<b>fetchJoke()</b>: Returns random joke. Data is fetched in the form of fetchJoke().setup (Setup of the joke) and fetchJoke().punchline (Punchline of the joke).
 ```javascript
    let data = await something.fetchJoke()
    message.channel.send(`${data.setup}\n${data.punchline}`)
 ```
 
-## fetchLyrics(song): Returns lyrics of provided song.
+<b>fetchLyrics(song)</b>: Returns lyrics of provided song.
 ```javascript
    let data = await something.fetchLyrics("Perfect")
    message.channel.send(data)
 ```
 
-## fetchMeme(): Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().url (Image of the meme).
+<b>fetchMeme()</b>: Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().url (Image of the meme).
 ```javascript
    let data = await something.fetchMeme()
    message.channel.send(`${data.title}\n${data.url}`)
 ```
 
-## fetchQuote(): Returns random quote.
+<b>fetchQuote()</b>: Returns random quote.
 ```javascript
    let data = await something.fetchQuote()
    message.channel.send(data)
 ```
 
-## fetchNeko(): Returns random neko image.
+<b>fetchNeko()</b>: Returns random neko image.
 ```javascript
    let data = await something.fetchNeko()
    message.channel.send(data)
 ```
 
-## fetchNekoGif(): Returns random neko gif.
+<b>fetchNekoGif()</b>: Returns random neko gif.
 ```javascript
    let data = await something.fetchNekoGif()
    message.channel.send(data)
@@ -94,13 +96,13 @@ client.login("Your Token Here");
 # NSFW Methods.
 <br>
 
-## fetchNSFWNeko(): Returns random nsfw neko image.
+<b>fetchNSFWNeko()</b>: Returns random nsfw neko image.
 ```javascript
    let data = await something.fetchNSFWNeko()
    message.channel.send(data)
 ```
 
-## fetchNSFWNekoGif(): Returns random nsfw neko gif.
+<b>fetchNSFWNekoGif()</b>: Returns random nsfw neko gif.
 ```javascript
    let data = await something.fetchNSFWNekoGif()
    message.channel.send(data)
