@@ -15,10 +15,19 @@
   "engines": {
     "node": "14.x"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLastGamer18/some-random-package"
+  },
   "license": "MIT",
   "keywords": [
     "multipurpose",
     "npm",
-    "discord"
+    "discord",
+    "neko",
+    "fact",
+    "quotes",
+    "image",
+    "nsfw"
   ]
 }
