@@ -2,7 +2,7 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "some-random-package",
+  "name": "multipurpose-package-for-discord",
   "version": "0.0.1",
   "description": "A package that for multipurpose use and will help you make your Discord bot better!.",
   "main": "index.js",
