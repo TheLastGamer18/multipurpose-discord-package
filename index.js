@@ -1,3 +1,4 @@
 module.exports = {
-  Something: require("./src/something")
+  Something: require("./src/something"),
+  version: require("./package.json").version
 };
