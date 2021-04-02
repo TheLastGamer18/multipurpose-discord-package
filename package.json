@@ -4,7 +4,7 @@
   "//3": "updating this file will download and update your packages",
   "name": "multipurpose-discord-package",
   "version": "0.0.1",
-  "description": "A package that for multipurpose use and will help you make your Discord bot better!.",
+  "description": "A package for multipurpose use and will help you make your Discord bot better!.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -19,6 +19,10 @@
     "type": "git",
     "url": "git+https://github.com/TheLastGamer18/multipurpose-discord-package"
   },
+  "bugs": {
+    "url": "https://github.com/TheLastGamer18/multipurpose-discord-package/issues"
+  },
+  "homepage": "https://github.com/TheLastGamer18/multipurpose-discord-package#readme",
   "license": "MIT",
   "keywords": [
     "multipurpose",
