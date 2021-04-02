@@ -23,14 +23,13 @@ client.on("message", async message => {
       let joke = await something.fetchJoke();
       
       let embed = new Discord.MessageEmbed()
-      .setTitle(something.setup)
-      .setDescription(something.punchline)
+      .setDescription(`${joke.setup}\n\n${joke.punchline}`)
       .setColor("RANDOM")
       message.channel.send(embed)
      
    } else if(message.content.startsWith(`!meme`)) {
    
-   let meme = await util.fetchMeme()
+   let meme = await something.fetchMeme()
    
    let embed = new Discord.MessageEmbed()
    .setTitle("Meme!")
