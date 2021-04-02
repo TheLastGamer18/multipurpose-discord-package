@@ -8,7 +8,7 @@
 ```javascript
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { Something } = require("some-random-package");
+const { Something } = require("multipurpose-discord-package");
 const something = new Something();
 
 client.on("ready", () => {
