@@ -3,7 +3,7 @@
 # Note:
 - If you are facing any type of bugs with any of the methods, report it [here](https://github.com/TheLastGamer18/multipurpose-discord-package/issues).
 
-# Reasons to use this package!
+# Reasons to use this package.
 - This package will work with any version! Because the methods return only the data, and how to represent that data is depended upon you!  
 
 # Example
@@ -18,26 +18,24 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
-   if(message.content.startsWith(`!joke`)) {
+   if(message.content.startsWith("!joke")) {
      
-      let joke = await something.fetchJoke();
-      
-      let embed = new Discord.MessageEmbed()
-      .setDescription(`${joke.setup}\n\n${joke.punchline}`)
-      .setColor("RANDOM")
-      message.channel.send(embed)
+     let joke = await something.fetchJoke();
+     let embed = new discord.MessageEmbed()
+     .setTitle(joke.setup)
+     .setDescription(joke.punchline)
+     .setColor("RANDOM")
+     message.channel.send(embed)
      
-   } else if(message.content.startsWith(`!meme`)) {
-   
-   let meme = await something.fetchMeme()
-   
-   let embed = new Discord.MessageEmbed()
-   .setTitle("Meme!")
-   .setDescription(meme.title)
-   .setImage(meme.url)
-   .setColor("RANDOM")
-   message.channel.send(embed);
-   
+   } else if (message.content.startsWith("!neko")) {
+     
+     let neko = await something.fetchNeko();
+     let embed = new discord.MessageEmbed()
+     .setTitle("Neko!")
+     .setImage(neko)
+     .setColor("RANDOM")
+     message.channel.send(embed)
+     
    }
 });
 
@@ -90,6 +88,12 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
+<b>fetchWaifu()</b>: Returns random waifu gif.
+```javascript
+   let data = await something.fetchWaifu()
+   message.channel.send(data)
+```
+
 <br>
 
 # NSFW Methods.
@@ -104,6 +108,12 @@ client.login("Your Token Here");
 <b>fetchNSFWNekoGif()</b>: Returns random nsfw neko gif.
 ```javascript
    let data = await something.fetchNSFWNekoGif()
+   message.channel.send(data)
+```
+
+<b>fetchNSFWWaifu()</b>: Returns random nsfw waifu image.
+```javascript
+   let data = await something.fetchNekoGif()
    message.channel.send(data)
 ```
 
