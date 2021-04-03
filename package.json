@@ -12,9 +12,6 @@
   "dependencies": {
     "node-fetch": "^2.6.1"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheLastGamer18/multipurpose-discord-package"
