@@ -14,3 +14,7 @@
 
 # 0.0.6
 - Fixed a error where you couldn't install the package due to node version.
+
+# 0.0.7
+- Added two new methods, ```fetchWaifu()``` and ```fetchNSFWWaifu()```.
+- Improved README.md example code.
