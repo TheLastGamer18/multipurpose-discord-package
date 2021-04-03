@@ -11,3 +11,6 @@
 
 # 0.0.5
 - Fixed a major bug in example code which made the code not work.
+
+# 0.0.6
+- Fixed a error where you couldn't install the package due to node version.
