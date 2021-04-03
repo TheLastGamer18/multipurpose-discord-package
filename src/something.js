@@ -111,6 +111,28 @@ class Something {
     return neko.url;
   }
   
+  async fetchWaifu() {
+    let json = await fetch("https://waifu.pics/api/sfw/waifu");
+    let waifu = await json.json();
+    
+    if(!waifu) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return waifu.url;
+  }
+  
+  async fetchNSFWWaifu() {
+    let json = await fetch("https://waifu.pics/api/nsfw/waifu");
+    let waifu = await json.json();
+    
+    if(!waifu) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return waifu.url;
+  }
+  
 }
 
 module.exports = Something;
