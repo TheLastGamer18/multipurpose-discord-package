@@ -1,10 +1,10 @@
-# A package that is helpful in bot making! Make commands easily using this package!
+# A package that is helpful in bot making! Make commands easily using this package.
 
 # Note:
 - If you are facing any type of bugs with any of the methods, report it [here](https://github.com/TheLastGamer18/multipurpose-discord-package/issues).
 
 # Reasons to use this package.
-- This package will work with any version! Because the methods return only the data, and how to represent that data is depended upon you!  
+- This package will work with any version! Because the methods return only the data, and how to represent that data is depended upon you! The package is frequently updated.
 
 # Example
 ```javascript
@@ -36,6 +36,15 @@ client.on("message", async message => {
      .setColor("RANDOM")
      message.channel.send(embed)
      
+   } else if (message.content.startsWith("!meme")) {
+     
+     let meme = await something.fetchMeme();
+     let embed = new discord.MessageEmbed()
+     .setTitle(meme.title)
+     .setImage(meme.image)
+     .setColor("RANDOM")
+     message.channel.send(embed);
+     
    }
 });
 
@@ -64,10 +73,10 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
-<b>fetchMeme()</b>: Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().url (Image of the meme).
+<b>fetchMeme()</b>: Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().image (Image of the meme).
 ```javascript
    let data = await something.fetchMeme()
-   message.channel.send(`${data.title}\n${data.url}`)
+   message.channel.send(`${data.title}\n${data.image}`)
 ```
 
 <b>fetchQuote()</b>: Returns random quote.
@@ -94,6 +103,18 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
+<b>fetchOwoifiedText(text)</b>: Returns owoified text.
+```javascript
+   let data = await something.fetchOwoifiedText("hello friends!")
+   message.channel.send(data)
+```
+
+<b>fetchEmojifyText(text)</b>: Returns emojified text.
+```javascript
+   let data = await something.fetchEmojifyText("hello friends!")
+   message.channel.send(data)
+```
+
 <br>
 
 # NSFW Methods.
@@ -116,5 +137,6 @@ client.login("Your Token Here");
    let data = await something.fetchNekoGif()
    message.channel.send(data)
 ```
+<br>
 
-# Will be adding more soon!
+## Want to contribute? Feel free to make a pull request [here](https://github.com/TheLastGamer18/multipurpose-discord-package) and I will be happy to review it.
