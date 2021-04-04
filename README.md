@@ -97,7 +97,7 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
-<b>fetchWaifu()</b>: Returns random waifu gif.
+<b>fetchWaifu()</b>: Returns random waifu image.
 ```javascript
    let data = await something.fetchWaifu()
    message.channel.send(data)
