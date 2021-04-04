@@ -18,3 +18,9 @@
 # 0.0.7
 - Added two new methods, ```fetchWaifu()``` and ```fetchNSFWWaifu()```.
 - Improved README.md example code.
+
+# 0.0.8
+- Fixed ```fetchNSFWNeko()``` method as it was not working.
+- Improved README.md and its example code.
+- Changed ```fetchMeme()``` as earlier it was giving repetitive memes, now it fetches memes from several subreddits.
+- Added ```fetchOwoifiedText()``` and ```fetchEmojifyText()```
