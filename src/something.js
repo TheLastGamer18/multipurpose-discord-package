@@ -1,4 +1,21 @@
 const fetch = require("node-fetch");
+const mapping = {
+  ' ': '   ',
+  '0': ':zero:',
+  '1': ':one:',
+  '2': ':two:',
+  '3': ':three:',
+  '4': ':four:',
+  '5': ':five:',
+  '6': ':six:',
+  '7': ':seven:',
+  '8': ':eight:',
+  '9': ':nine:',
+  '!': ':grey_exclamation:',
+  '?': ':grey_question:',
+  '#': ':hash:',
+  '*': ':asterisk:'
+};
 
 class Something {
   
@@ -43,17 +60,22 @@ class Something {
   }
 
   async fetchMeme() {
-    let json = await fetch("https://jastinch-api.ml/meme");
+    let subreddits = ["memes", "me_irl", "dankmemes", "comedyheaven", "Animemes"];
+    subreddits = subreddits[Math.floor(Math.random() * subreddits.length)];
+    
+    let json = await fetch(`https://reddit.com/r/${subreddits}/random/.json`);
     let meme = await json.json();
     
-    if(!meme) {
+    if(!meme[0]) {
       throw new Error("[SRP] API Unavailable. Try again later.")
     };
     
+    meme = meme[0].data.children[0].data;
+    
     return {
-      url: meme.urlimg,
-      title: meme.caption
-    }
+      title: meme.title,
+      image: meme.url
+    };
   }
   
   async fetchQuote() {
@@ -77,7 +99,7 @@ class Something {
     
     return neko.url;
   }
-  
+
   async fetchNekoGif() {
     let json = await fetch("https://nekos.life/api/v2/img/ngif");
     let neko = await json.json();
@@ -90,14 +112,14 @@ class Something {
   }
   
   async fetchNSFWNeko() {
-    let json = await fetch("https://jastinch-api.ml/nsfwneko");
+    let json = await fetch("https://nekos.life/api/v2/img/lewd");
     let neko = await json.json();
     
     if(!neko) {
       throw new Error("[SRP] API Unavailable. Try again later.")
     };
     
-    return neko.urlimg;
+    return neko.url;
   }
   
   async fetchNSFWNekoGif() {
@@ -131,6 +153,33 @@ class Something {
     };
     
     return waifu.url;
+  }
+  
+  async fetchOwoifiedText(text) {
+    if(!text) {
+      throw new Error("[SRP] Provide some text to owoify!")
+    }
+    
+    let json = await fetch(`https://nekos.life/api/v2/owoify?text=${text}`);
+    let owo = await json.json();
+    
+    if(!owo) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return owo.owo;
+  }
+  
+  async fetchEmojifyText(text) {
+    if(!text) {
+      throw new Error("[SRP] Provide some text to emojify!")
+    }
+    
+    "abcdefghijklmnopqrstuvwxyz".split("").forEach(c => {
+      mapping[c] = mapping[c.toUpperCase()] = ` :regional_indicator_${c}:`
+    });
+    
+    return text.split("").map(c => mapping[c] || c).join("");
   }
   
 }
