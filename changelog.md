@@ -24,3 +24,6 @@
 - Improved README.md and its example code.
 - Changed ```fetchMeme()``` as earlier it was giving repetitive memes, now it fetches memes from several subreddits.
 - Added ```fetchOwoifiedText()``` and ```fetchEmojifyText()```
+
+# 0.0.9
+- Added ```fetchDogFact()```, ```fetchCatFact()```, ```fetchBirdFact()```, ```fetchKoalaFact()```, ```fetchFoxFact()``` and ```fetchPandaFact()```.
