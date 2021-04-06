@@ -115,6 +115,42 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
+<b>fetchDogFact()</b>: Returns random dog fact.
+```javascript
+   let data = await something.fetchDogFact()
+   message.channel.send(data)
+```
+
+<b>fetchCatFact()</b>: Returns random cat fact.
+```javascript
+   let data = await something.fetchCatFact()
+   message.channel.send(data)
+```
+
+<b>fetchBirdFact()</b>: Returns random bird fact.
+```javascript
+   let data = await something.fetchBirdFact()
+   message.channel.send(data)
+```
+
+<b>fetchFoxFact()</b>: Returns random fox fact.
+```javascript
+   let data = await something.fetchFoxFact()
+   message.channel.send(data)
+```
+
+<b>fetchKoalaFact()</b>: Returns random koala fact.
+```javascript
+   let data = await something.fetchKoalaFact()
+   message.channel.send(data)
+```
+
+<b>fetchPandaFact()</b>: Returns random panda fact.
+```javascript
+   let data = await something.fetchPandaFact()
+   message.channel.send(data)
+```
+
 <br>
 
 # NSFW Methods.
