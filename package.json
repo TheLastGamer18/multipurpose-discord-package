@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "multipurpose-discord-package",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A package for multipurpose use and will help you make your Discord bot better!",
   "main": "index.js",
   "scripts": {
