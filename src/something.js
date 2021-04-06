@@ -182,6 +182,72 @@ class Something {
     return text.split("").map(c => mapping[c] || c).join("");
   }
   
+  async fetchDogFact() {
+    let json = await fetch("https://some-random-api.ml/facts/dog");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }  
+  
+  async fetchCatFact() {
+    let json = await fetch("https://some-random-api.ml/facts/cat");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }
+  
+  async fetchBirdFact() {
+    let json = await fetch("https://some-random-api.ml/facts/bird");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }
+  
+  async fetchKoalaFact() {
+    let json = await fetch("https://some-random-api.ml/facts/koala");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }
+  
+  async fetchPandaFact() {
+    let json = await fetch("https://some-random-api.ml/facts/panda");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }
+  
+  async fetchFoxFact() {
+    let json = await fetch("https://some-random-api.ml/facts/fox");
+    let fact = await json.json();
+    
+    if(!fact) {
+      throw new Error("[SRP] API Unavailable. Try again later.")
+    };
+    
+    return fact.fact;
+  }
+  
 }
 
 module.exports = Something;
