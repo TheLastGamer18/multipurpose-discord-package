@@ -1,3 +1,5 @@
+[![downloadsBadge](https://img.shields.io/npm/dt/multipurpose-discord-package?style=for-the-badge)](https://npmjs.com/multipurpose-discord-package) [![versionBadge](https://img.shields.io/npm/v/multipurpose-discord-package?style=for-the-badge)](https://npmjs.com/multipurpose-discord-package)
+
 # A package that is helpful in bot making! Make commands easily using this package.
 
 # Note:
@@ -52,8 +54,7 @@ client.login("Your Token Here");
 ```
 <br>
 
-# All methods.
-<br>
+# Fetching methods.
 
 <b>fetchAdvice()</b>: Returns random advice.
 ```javascript
@@ -103,18 +104,6 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
-<b>fetchOwoifiedText(text)</b>: Returns owoified text.
-```javascript
-   let data = await something.fetchOwoifiedText("hello friends!")
-   message.channel.send(data)
-```
-
-<b>fetchEmojifyText(text)</b>: Returns emojified text.
-```javascript
-   let data = await something.fetchEmojifyText("hello friends!")
-   message.channel.send(data)
-```
-
 <b>fetchDogFact()</b>: Returns random dog fact.
 ```javascript
    let data = await something.fetchDogFact()
@@ -153,8 +142,35 @@ client.login("Your Token Here");
 
 <br>
 
-# NSFW Methods.
+# Text-manipulation methods.
+
+<b>owoify(text)</b>: Returns owoified text.
+```javascript
+   let data = await something.owoify("hello friends!")
+   message.channel.send(data)
+```
+
+<b>emojify(text)</b>: Returns emojified text.
+```javascript
+   let data = await something.emojify("something to emojify.")
+   message.channel.send(data)
+```
+
+<b>reverse(text)</b>: Returns reversed text.
+```javascript
+   let data = await something.reverse("this will be reversed.")
+   message.channel.send(data)
+```
+
+<b>shuffle(text)</b>: Returns shuffled text.
+```javascript
+   let data = await something.shuffle("some shuffled text.")
+   message.channel.send(data)
+```
+
 <br>
+
+# NSFW methods.
 
 <b>fetchNSFWNeko()</b>: Returns random nsfw neko image.
 ```javascript
