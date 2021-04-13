@@ -17,13 +17,21 @@
 
 # 0.0.7
 - Added two new methods, ```fetchWaifu()``` and ```fetchNSFWWaifu()```.
-- Improved README.md example code.
+- Improved readme example code.
 
 # 0.0.8
 - Fixed ```fetchNSFWNeko()``` method as it was not working.
-- Improved README.md and its example code.
+- Improved readme and its example code.
 - Changed ```fetchMeme()``` as earlier it was giving repetitive memes, now it fetches memes from several subreddits.
 - Added ```fetchOwoifiedText()``` and ```fetchEmojifyText()```
 
 # 0.0.9
 - Added ```fetchDogFact()```, ```fetchCatFact()```, ```fetchBirdFact()```, ```fetchKoalaFact()```, ```fetchFoxFact()``` and ```fetchPandaFact()```.
+
+# 0.1.0
+- Major update in readme which splits all the methods in 3 parts - Fetching methods, text-manipulation methods and nsfw methods.
+- Changed name of text-manipulation methods to make it look more suitable.
+  ```fetchOwoifiedText()``` => ```owoify()```
+  <br>
+  ```fetchEmojifyText()``` => ```emojify()```
+- Added ```reverse()``` and ```shuffle()```
