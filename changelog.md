@@ -31,6 +31,7 @@
 # 0.1.0
 - Major update in readme which splits all the methods in 3 parts - Fetching methods, text-manipulation methods and nsfw methods.
 - Changed name of text-manipulation methods to make it look more suitable.
+  <br>
   ```fetchOwoifiedText()``` => ```owoify()```
   <br>
   ```fetchEmojifyText()``` => ```emojify()```
