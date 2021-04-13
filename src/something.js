@@ -24,7 +24,7 @@ class Something {
     let advice = await json.json();
     
     if(!advice) {
-      throw new Error("[SRP] API Unavailable. Try again later.");
+      throw new Error("[MDP] API Unavailable. Try again later.");
     }
     
     return advice.slip.advice;
@@ -35,7 +35,7 @@ class Something {
     let joke = await json.json();
     
     if(!joke) {
-      throw new Error("[SRP] Api Unavailable. Try again later.");
+      throw new Error("[MDP] Api Unavailable. Try again later.");
     }
     
     return {
@@ -46,14 +46,14 @@ class Something {
   
   async fetchLyrics(song) {
     if(!song) {
-      throw new Error("[SRP] Provide a song name for it to work.")
+      throw new Error("[MDP] Provide a song name for it to work.")
     }
     
     let json = await fetch(`https://jastinch-api.ml/lyrics?song=${song}`);
     let lyrics = await json.json();
     
     if(!lyrics) {
-      throw new Error("[SRP] No lyrics found.")
+      throw new Error("[MDP] No lyrics found.")
     }
     
     return lyrics.lyrics;
@@ -67,7 +67,7 @@ class Something {
     let meme = await json.json();
     
     if(!meme[0]) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     meme = meme[0].data.children[0].data;
@@ -83,7 +83,7 @@ class Something {
     let quotes = await json.json();
     
     if(!quotes) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return quotes.quote;
@@ -94,7 +94,7 @@ class Something {
     let neko = await json.json();
     
     if(!neko) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return neko.url;
@@ -105,7 +105,7 @@ class Something {
     let neko = await json.json();
     
     if(!neko) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return neko.url;
@@ -116,7 +116,7 @@ class Something {
     let neko = await json.json();
     
     if(!neko) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return neko.url;
@@ -127,7 +127,7 @@ class Something {
     let neko = await json.json();
     
     if(!neko) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return neko.url;
@@ -138,7 +138,7 @@ class Something {
     let waifu = await json.json();
     
     if(!waifu) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return waifu.url;
@@ -149,30 +149,30 @@ class Something {
     let waifu = await json.json();
     
     if(!waifu) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return waifu.url;
   }
   
-  async fetchOwoifiedText(text) {
+  async owoify(text) {
     if(!text) {
-      throw new Error("[SRP] Provide some text to owoify!")
+      throw new Error("[MDP] Provide some text to owoify!")
     }
     
     let json = await fetch(`https://nekos.life/api/v2/owoify?text=${text}`);
     let owo = await json.json();
     
     if(!owo) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return owo.owo;
   }
   
-  async fetchEmojifyText(text) {
+  async emojify(text) {
     if(!text) {
-      throw new Error("[SRP] Provide some text to emojify!")
+      throw new Error("[MDP] Provide some text to emojify!")
     }
     
     "abcdefghijklmnopqrstuvwxyz".split("").forEach(c => {
@@ -182,12 +182,28 @@ class Something {
     return text.split("").map(c => mapping[c] || c).join("");
   }
   
+  async reverse(text) {
+    if(!text) {
+      throw new Error("[MDP] Provide some text to reverse!")
+    }
+    
+    return text.split("").reverse().join("");
+  }
+  
+  async shuffle(text) {
+    if(!text) {
+      throw new Error("[MDP] Provide some text to reverse!")
+    }
+    
+    return text.split("").sort(() => 0.5 - Math.random()).join("")
+  }
+  
   async fetchDogFact() {
     let json = await fetch("https://some-random-api.ml/facts/dog");
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
@@ -198,7 +214,7 @@ class Something {
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
@@ -209,7 +225,7 @@ class Something {
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
@@ -220,7 +236,7 @@ class Something {
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
@@ -231,7 +247,7 @@ class Something {
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
@@ -242,7 +258,7 @@ class Something {
     let fact = await json.json();
     
     if(!fact) {
-      throw new Error("[SRP] API Unavailable. Try again later.")
+      throw new Error("[MDP] API Unavailable. Try again later.")
     };
     
     return fact.fact;
