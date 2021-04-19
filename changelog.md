@@ -41,5 +41,5 @@
 
 # 0.1.1
 - Another major update in readme, now every method has an example of what it returns beside them.
-- Added ```fetchRawMCSkin()```, ```fetchMCSkin()```, ```fetchMCNameHistory```
+- Added ```fetchRawMCSkin()```, ```fetchMCSkin()```, ```fetchMCNameHistory()```
 - Cleaned and removed unnecessary codes.
