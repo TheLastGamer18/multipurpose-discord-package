@@ -28,6 +28,8 @@
 # 0.0.9
 - Added ```fetchDogFact()```, ```fetchCatFact()```, ```fetchBirdFact()```, ```fetchKoalaFact()```, ```fetchFoxFact()``` and ```fetchPandaFact()```.
 
+----------------------------------------------
+
 # 0.1.0
 - Major update in readme which splits all the methods in 3 parts - Fetching methods, text-manipulation methods and nsfw methods.
 - Changed name of text-manipulation methods to make it look more suitable.
@@ -36,3 +38,8 @@
   <br>
   ```fetchEmojifyText()``` => ```emojify()```
 - Added ```reverse()``` and ```shuffle()```
+
+# 0.1.1
+- Another major update in readme, now every method has an example of what it returns beside them.
+- Added ```fetchRawMCSkin()```, ```fetchMCSkin()```, ```fetchMCNameHistory```
+- Cleaned and removed unnecessary codes.
