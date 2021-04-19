@@ -58,85 +58,103 @@ client.login("Your Token Here");
 
 <b>fetchAdvice()</b>: Returns random advice.
 ```javascript
-   let data = await something.fetchAdvice()
+   let data = await something.fetchAdvice() // "Respect your elders."
    message.channel.send(data)
 ```
 
 <b>fetchJoke()</b>: Returns random joke. Data is fetched in the form of fetchJoke().setup (Setup of the joke) and fetchJoke().punchline (Punchline of the joke).
 ```javascript
-   let data = await something.fetchJoke()
+   let data = await something.fetchJoke() // {setup: "Why did the invisible man turn down the job offer?", punchline: "He couldn't see himself doing it"}
    message.channel.send(`${data.setup}\n${data.punchline}`)
 ```
 
 <b>fetchLyrics(song)</b>: Returns lyrics of provided song.
 ```javascript
-   let data = await something.fetchLyrics("Perfect")
+   let data = await something.fetchLyrics("Perfect") // "I found a love for me\nOh darling ... You look perfect tonight"
    message.channel.send(data)
 ```
 
 <b>fetchMeme()</b>: Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().image (Image of the meme).
 ```javascript
-   let data = await something.fetchMeme()
+   let data = await something.fetchMeme() // {title: "me_irl", image: "https://i.redd.it/9pi03fh30wt61.png"}
    message.channel.send(`${data.title}\n${data.image}`)
 ```
 
 <b>fetchQuote()</b>: Returns random quote.
 ```javascript
-   let data = await something.fetchQuote()
+   let data = await something.fetchQuote() // "We are what we think. All that we are arises with our thoughts. With our thoughts, we make the world."
    message.channel.send(data)
 ```
 
 <b>fetchNeko()</b>: Returns random neko image.
 ```javascript
-   let data = await something.fetchNeko()
+   let data = await something.fetchNeko() // ""https://neko-love.xyz/v1/neko/neko-love_395.jpg"
    message.channel.send(data)
 ```
 
 <b>fetchNekoGif()</b>: Returns random neko gif.
 ```javascript
-   let data = await something.fetchNekoGif()
+   let data = await something.fetchNekoGif() // "https://cdn.nekos.life/ngif/neko_026.gif"
    message.channel.send(data)
 ```
 
 <b>fetchWaifu()</b>: Returns random waifu image.
 ```javascript
-   let data = await something.fetchWaifu()
+   let data = await something.fetchWaifu() // "https://i.waifu.pics/i1QE8~W.com_0265.jpg"
    message.channel.send(data)
 ```
 
 <b>fetchDogFact()</b>: Returns random dog fact.
 ```javascript
-   let data = await something.fetchDogFact()
+   let data = await something.fetchDogFact() // "Puppies are born without teeth and eyesight. They're also born deaf."
    message.channel.send(data)
 ```
 
 <b>fetchCatFact()</b>: Returns random cat fact.
 ```javascript
-   let data = await something.fetchCatFact()
+   let data = await something.fetchCatFact() // "Cats only sweat through their foot pads."
    message.channel.send(data)
 ```
 
 <b>fetchBirdFact()</b>: Returns random bird fact.
 ```javascript
-   let data = await something.fetchBirdFact()
+   let data = await something.fetchBirdFact() // "Flamingos pair for a lifetime. Some stay with their mates for 50 years or more."
    message.channel.send(data)
 ```
 
 <b>fetchFoxFact()</b>: Returns random fox fact.
 ```javascript
-   let data = await something.fetchFoxFact()
+   let data = await something.fetchFoxFact() // "Foxes dig underground dens where they take care of their kits and hide from predators"
    message.channel.send(data)
 ```
 
 <b>fetchKoalaFact()</b>: Returns random koala fact.
 ```javascript
-   let data = await something.fetchKoalaFact()
+   let data = await something.fetchKoalaFact() // "These magnificent mammals get their name form an Aborigina…oisture from the leaves they eat, and rarely drink water."
    message.channel.send(data)
 ```
 
 <b>fetchPandaFact()</b>: Returns random panda fact.
 ```javascript
-   let data = await something.fetchPandaFact()
+   let data = await something.fetchPandaFact() // "After 1 month the cub is 1 cm. long."
+   message.channel.send(data)
+```
+
+<b>fetchRawMCSkin(name)</b>: Returns minecraft skin texture of provided username. You can download the image and select it as your own skin.
+```javascript
+   let data = await something.fetchRawMCSkin("Technoblade") // "http://textures.minecraft.net/texture/786c039d969d1839155255e38e7b06a626ea9f8baf9cb55e0a77311efe18a3e"
+   message.channel.send(data)
+```
+
+<b>fetchMCSkin(name)</b>: Returns minecraft skin of provided username.
+```javascript
+   let data = await something.fetchRawMCSkin("Technoblade") // https://minotar.net/body/Technoblade/100.png
+   message.channel.send(data)
+```
+
+<b>fetchMCNameHistory(name)</b>: Returns minecraft skin of provided username.
+```javascript
+   let data = await something.fetchRawMCSkin("some name here") // ["first name", "second name", "third name", "and so on"]
    message.channel.send(data)
 ```
 
@@ -146,25 +164,25 @@ client.login("Your Token Here");
 
 <b>owoify(text)</b>: Returns owoified text.
 ```javascript
-   let data = await something.owoify("hello friends!")
+   let data = await something.owoify("hello friends!") // "hewwo fwienyds UwU"
    message.channel.send(data)
 ```
 
 <b>emojify(text)</b>: Returns emojified text.
 ```javascript
-   let data = await something.emojify("something to emojify.")
+   let data = await something.emojify("something to emojify.") // " :regional_indicator_s: :regional_indicator_o: :regional_i … dicator_i: :regional_indicator_f: :regional_indicator_y:."
    message.channel.send(data)
 ```
 
 <b>reverse(text)</b>: Returns reversed text.
 ```javascript
-   let data = await something.reverse("this will be reversed.")
+   let data = await something.reverse("this will be reversed.") // ".desrever eb lliw siht"
    message.channel.send(data)
 ```
 
 <b>shuffle(text)</b>: Returns shuffled text.
 ```javascript
-   let data = await something.shuffle("some shuffled text.")
+   let data = await something.shuffle("some shuffled text.") // " t.osefshxtdf eluem"
    message.channel.send(data)
 ```
 
@@ -174,19 +192,19 @@ client.login("Your Token Here");
 
 <b>fetchNSFWNeko()</b>: Returns random nsfw neko image.
 ```javascript
-   let data = await something.fetchNSFWNeko()
+   let data = await something.fetchNSFWNeko() // "https://cdn.nekos.life/lewd/lewd_neko***.jpg"
    message.channel.send(data)
 ```
 
 <b>fetchNSFWNekoGif()</b>: Returns random nsfw neko gif.
 ```javascript
-   let data = await something.fetchNSFWNekoGif()
+   let data = await something.fetchNSFWNekoGif() // "https://cdn.nekos.life/nsfw_neko_gif/hneko**.gif"
    message.channel.send(data)
 ```
 
 <b>fetchNSFWWaifu()</b>: Returns random nsfw waifu image.
 ```javascript
-   let data = await something.fetchNekoGif()
+   let data = await something.fetchNSFWWaifu() // "https://i.waifu.pics/jjc***d.png"
    message.channel.send(data)
 ```
 <br>
