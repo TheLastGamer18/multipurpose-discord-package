@@ -186,6 +186,42 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
+<b>textToBinary(text)</b>: Returns provided text into binary.
+```javascript
+   let data = await something.textToBinary("binary test") // "1100010 1101001 1101110 1100001 1110010 1111001 100000 1110100 1100101 1110011 1110100"
+   message.channel.send(data)
+```
+
+<b>binaryToText(binary)</b>: Returns provided binary into text.
+```javascript
+   let data = await something.binaryToText("1100010 1101001 1101110 1100001 1110010 1111001 100000 1110100 1100101 1110011 1110100") // "binary test"
+   message.channel.send(data)
+```
+
+<b>ascii(text)</b>: Returns provided text into ascii.
+```javascript
+   let data = await something.ascii("e") //  "___/ _ \|  __/\___|" (will be formatted when used)
+   message.channel.send(data)
+```
+
+<b>piglatin(text)</b>: Returns provided text into piglatin.
+```javascript
+   let data = await something.piglatin("this is piglatin text") // "is-thay is-way iglatin-pay ext-tay"
+   message.channel.send(data)
+```
+
+<b>pirateSpeak(text)</b>: Returns provided text into pirate speak.
+```javascript
+   let data = await something.pirateSpeak("this is some pirate text my friend") // "'tis some pirate text me bucko"
+   message.channel.send(data)
+```
+
+<b>yodaSpeak(text)</b>: Returns provided text into yoda speak.
+```javascript
+   let data = await something.yodaSpeak("I am speaking like yoda!") // "Speaking like yoda!, I am."
+   message.channel.send(data)
+```
+
 <br>
 
 # NSFW methods.
