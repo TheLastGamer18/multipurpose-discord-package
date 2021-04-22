@@ -1,21 +1,5 @@
 const fetch = require("node-fetch")
-const mapping = {
-  ' ': '   ',
-  '0': ':zero:',
-  '1': ':one:',
-  '2': ':two:',
-  '3': ':three:',
-  '4': ':four:',
-  '5': ':five:',
-  '6': ':six:',
-  '7': ':seven:',
-  '8': ':eight:',
-  '9': ':nine:',
-  '!': ':grey_exclamation:',
-  '?': ':grey_question:',
-  '#': ':hash:',
-  '*': ':asterisk:'
-}
+const functions = require("../functions/function")
 
 class Something {
   
@@ -176,10 +160,10 @@ class Something {
     }
     
     "abcdefghijklmnopqrstuvwxyz".split("").forEach(c => {
-      mapping[c] = mapping[c.toUpperCase()] = ` :regional_indicator_${c}:`
+      functions.mapping[c] = functions.mapping[c.toUpperCase()] = ` :regional_indicator_${c}:`
     })
     
-    return text.split("").map(c => mapping[c] || c).join("")
+    return text.split("").map(c => functions.mapping[c] || c).join("")
   }
   
   async reverse(text) {
@@ -302,6 +286,90 @@ class Something {
     
     let names = await json.json()
     return names.map(e => e.name)
+  }
+  
+  async textToBinary(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let binary = ""
+    
+    for(let i = 0; i < text.length; i++) {
+      binary += text[i].charCodeAt(0).toString(2) + " "
+    }
+    
+    return binary
+  }
+  
+  async binaryToText(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let result = ""
+    
+    text.split(" ").map(binary => {
+      result += String.fromCharCode(parseInt(binary, 2))
+    })
+    
+    return result
+  }
+  
+  async ascii(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let json = await fetch(`https://artii.herokuapp.com/make?text=${text}`)
+    let ascii = await json.text()
+    
+    if(!ascii) {
+      throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    return ascii
+  }
+  
+  async piglatin(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let json = await fetch(`https://api.funtranslations.com/translate/pig-latin.json?text=${text}`)
+    let piglatin = await json.json()
+    
+    if(!piglatin.contents) {
+      throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    return piglatin.contents.translated
+  }
+  
+  async pirateSpeak(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let json = await fetch(`https://pirate.monkeyness.com/api/translate?english=${text}`)
+    let pirate = await json.text()
+    
+    if(!pirate) {
+      throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    return pirate
+  }
+  
+  async yodaSpeak(text) {
+    if(!text) {
+      throw new Error("[MDP] Please provide some text to convert!")
+    }
+    
+    let json = await fetch(`http://yoda-api.appspot.com/api/v1/yodish?text=${text}`)
+    let yoda = await json.json()
+    
+    return yoda.yodish
   }
   
 }
