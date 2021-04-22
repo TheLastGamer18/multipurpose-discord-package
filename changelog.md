@@ -1,5 +1,8 @@
 ## Changelog.
 
+# 0.0.1
+- Added to npm!
+
 # 0.0.2 
 - Added example and methods in README.md
 
@@ -41,5 +44,9 @@
 
 # 0.1.1
 - Another major update in readme, now every method has an example of what it returns beside them.
-- Added ```fetchRawMCSkin()```, ```fetchMCSkin()```, ```fetchMCNameHistory()```
+- Added ```fetchRawMCSkin()```, ```fetchMCSkin()```, ```fetchMCNameHistory```
 - Cleaned and removed unnecessary codes.
+
+# 0.1.2
+- Tons of new text-manipulation methods!
+- Added ```textToBinary(text)```, ```binaryToText(text)```, ```ascii(text)```, ```piglatin(text)```, ```pirateSpeak(text)``` and ```yodaSpeak(text)```.
