@@ -50,3 +50,8 @@
 # 0.1.2
 - Tons of new text-manipulation methods!
 - Added ```textToBinary(text)```, ```binaryToText(text)```, ```ascii(text)```, ```piglatin(text)```, ```pirateSpeak(text)``` and ```yodaSpeak(text)```.
+
+# 0.1.3
+- Added constructor options: ```sendAsEmbed``` and ```embedColor```. Enabling this sends a pre-made embed.
+- Fixed ```fetchJoke()```, ```fetchLyrics()``` and ```fetchQuote``` sending "API Unavailable" message as the domain from which they are fetched changed.
+- Edited readme.
