@@ -3,6 +3,15 @@ const functions = require("../functions/function")
 
 class Something {
   
+  constructor(options = { sendAsEmbed: false, embedColor: "" }) {
+    if(!options.sendAsEmbed && options.embedColor) {
+      throw new Error("You need to set sendAsEmbed option true before using embedColor.")
+    }
+    
+    this.sendAsEmbed = options.sendAsEmbed === true ? true : false
+    this.color = options.embedColor === "" ? "RANDOM" : options.embedColor
+  }
+  
   async fetchAdvice() {
     let json = await fetch("https://api.adviceslip.com/advice")
     let advice = await json.json()
@@ -11,15 +20,37 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Advice!",
+          description: advice.slip.advice,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return advice.slip.advice
   }
   
   async fetchJoke() {
-    let json = await fetch("https://jastinch-api.ml/randomjoke")
+    let json = await fetch("https://api.jastinch.xyz/randomjoke")
     let joke = await json.json()
     
     if(!joke) {
       throw new Error("[MDP] Api Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: joke.setup,
+          description: joke.punchline,
+          timestamp: new Date()
+        }
+      }
     }
     
     return {
@@ -33,11 +64,22 @@ class Something {
       throw new Error("[MDP] Provide a song name for it to work.")
     }
     
-    let json = await fetch(`https://jastinch-api.ml/lyrics?song=${song}`)
+    let json = await fetch(`https://api.jastinch.xyz/lyrics?song=${song}`)
     let lyrics = await json.json()
     
     if(!lyrics) {
       throw new Error("[MDP] No lyrics found.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Lyrics!",
+          description: lyrics.lyrics,
+          timestamp: new Date()
+        }
+      }
     }
     
     return lyrics.lyrics
@@ -56,6 +98,19 @@ class Something {
     
     meme = meme[0].data.children[0].data
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: meme.title,
+          image: {
+            url: meme.url
+          },
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return {
       title: meme.title,
       image: meme.url
@@ -63,11 +118,22 @@ class Something {
   }
   
   async fetchQuote() {
-    let json = await fetch("https://jastinch-api.ml/quotes")
+    let json = await fetch("https://api.jastinch.xyz/quotes")
     let quotes = await json.json()
     
     if(!quotes) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Quote!",
+          description: quotes.quote,
+          timestamp: new Date()
+        }
+      }
     }
     
     return quotes.quote
@@ -81,6 +147,19 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Neko!",
+          image: {
+            url: neko.url
+          },
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return neko.url
   }
 
@@ -90,6 +169,19 @@ class Something {
     
     if(!neko) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Neko gif!",
+          image: {
+            url: neko.url
+          },
+          timestamp: new Date()
+        }
+      }
     }
     
     return neko.url
@@ -103,6 +195,19 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "NSFW Neko!",
+          image: {
+            url: neko.url
+          },
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return neko.url
   }
   
@@ -112,6 +217,19 @@ class Something {
     
     if(!neko) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "NSFW Neko gif!",
+          image: {
+            url: neko.url
+          },
+          timestamp: new Date()
+        }
+      }
     }
     
     return neko.url
@@ -125,6 +243,19 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Waifu!",
+          image: {
+            url: waifu.url
+          },
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return waifu.url
   }
   
@@ -134,6 +265,19 @@ class Something {
     
     if(!waifu) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "NSFW Waifu!",
+          image: {
+            url: waifu.url
+          },
+          timestamp: new Date()
+        }
+      }
     }
     
     return waifu.url
@@ -151,6 +295,17 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Owoified text!",
+          description: owo.owo,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return owo.owo
   }
   
@@ -163,6 +318,17 @@ class Something {
       functions.mapping[c] = functions.mapping[c.toUpperCase()] = ` :regional_indicator_${c}:`
     })
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Emojified text!",
+          description: text.split("").map(c => functions.mapping[c] || c).join(""),
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return text.split("").map(c => functions.mapping[c] || c).join("")
   }
   
@@ -171,12 +337,34 @@ class Something {
       throw new Error("[MDP] Provide some text to reverse!")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Reversed text!",
+          description: text.split("").reverse().join(""),
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return text.split("").reverse().join("")
   }
   
   async shuffle(text) {
     if(!text) {
       throw new Error("[MDP] Provide some text to reverse!")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Shuffled text!",
+          description: text.split("").sort(() => 0.5 - Math.random()).join(""),
+          timestamp: new Date()
+        }
+      }
     }
     
     return text.split("").sort(() => 0.5 - Math.random()).join("")
@@ -190,6 +378,17 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Dog fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return fact.fact
   }  
   
@@ -199,6 +398,17 @@ class Something {
     
     if(!fact) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Cat fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
     }
     
     return fact.fact
@@ -212,6 +422,17 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Bird fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return fact.fact
   }
   
@@ -221,6 +442,17 @@ class Something {
     
     if(!fact) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Koala fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
     }
     
     return fact.fact
@@ -234,6 +466,17 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Panda fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return fact.fact
   }
   
@@ -243,6 +486,17 @@ class Something {
     
     if(!fact) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: "Fox fact!",
+          description: fact.fact,
+          timestamp: new Date()
+        }
+      }
     }
     
     return fact.fact
@@ -260,6 +514,19 @@ class Something {
     let json = await fetch(`https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`)
     let profile = await json.json()
     let skin = await JSON.parse(Buffer.from(profile.properties[0].value, 'base64').toString('utf-8'))
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: `${name}'s minecraft skin!`,
+          image: {
+            url: skin.textures.SKIN.url
+          },
+          timestamp: new Date()
+        }
+      }
+    }
       
     return skin.textures.SKIN.url
   }
@@ -268,6 +535,19 @@ class Something {
     let id = await fetch(`https://api.mojang.com/users/profiles/minecraft/${name}`)
     if(id.status !== 200) {
       throw new Error("[MDP] UUID isn't valid. Please check the name again.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: `${name}'s minecraft skin!`,
+          image: {
+            url: `https://minotar.net/body/${name}/100.png`
+          },
+          timestamp: new Date()
+        }
+      }
     }
     
     return `https://minotar.net/body/${name}/100.png`
@@ -283,8 +563,19 @@ class Something {
     uuid = uuid.id
     
     let json = await fetch(`https://api.mojang.com/user/profiles/${uuid}/names`)
-    
     let names = await json.json()
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          title: `${name}'s name history!`,
+          description: names.map(e => e.name).join(", "),
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return names.map(e => e.name)
   }
   
@@ -297,6 +588,16 @@ class Something {
     
     for(let i = 0; i < text.length; i++) {
       binary += text[i].charCodeAt(0).toString(2) + " "
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          description: binary,
+          timestamp: new Date()
+        }
+      }
     }
     
     return binary
@@ -313,6 +614,16 @@ class Something {
       result += String.fromCharCode(parseInt(binary, 2))
     })
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          description: result,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return result
   }
   
@@ -328,7 +639,7 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
-    return ascii
+    return "```" + ascii + "```"
   }
   
   async piglatin(text) {
@@ -341,6 +652,16 @@ class Something {
     
     if(!piglatin.contents) {
       throw new Error("[MDP] API Unavailable. Try again later.")
+    }
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          description: piglatin.contents.translated,
+          timestamp: new Date()
+        }
+      }
     }
     
     return piglatin.contents.translated
@@ -358,6 +679,16 @@ class Something {
       throw new Error("[MDP] API Unavailable. Try again later.")
     }
     
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          description: pirate,
+          timestamp: new Date()
+        }
+      }
+    }
+    
     return pirate
   }
   
@@ -368,6 +699,16 @@ class Something {
     
     let json = await fetch(`http://yoda-api.appspot.com/api/v1/yodish?text=${text}`)
     let yoda = await json.json()
+    
+    if(this.sendAsEmbed) {
+      return {
+        embed: {
+          color: this.color,
+          description: yoda.yodish,
+          timestamp: new Date()
+        }
+      }
+    }
     
     return yoda.yodish
   }
