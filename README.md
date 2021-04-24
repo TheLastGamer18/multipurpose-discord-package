@@ -54,6 +54,19 @@ client.login("Your Token Here");
 ```
 <br>
 
+# Constructor options.
+While instantiating the package, you can use some options which ease up your work more!
+```javascript
+   const { Something } = require("multipurpose-discord-package")
+   const something = new Something({ sendAsEmbed: true, embedColor: 0x00ff00 })
+```
+- sendAsEmbed: it will make the package send the data using a pre-made embed, so all you need to do is use a method you want and directly send it into a channel and it will be an embed! Personally, it is preferred to keep this option off and to use manually made embeds are you can't add anything in the pre-made embeds.
+- embedColor: sets the color of your embed to provided hex code. If left empty it will choose a random color. Can only be used when sendAsEmbed is enabled.
+
+<br>
+
+# Methods.
+
 # Fetching methods.
 
 <b>fetchAdvice()</b>: Returns random advice.
@@ -62,7 +75,7 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
-<b>fetchJoke()</b>: Returns random joke. Data is fetched in the form of fetchJoke().setup (Setup of the joke) and fetchJoke().punchline (Punchline of the joke).
+<b>fetchJoke()</b>: Returns random joke. Returns data.setup (Setup of the joke) and data.punchline (Punchline of the joke).
 ```javascript
    let data = await something.fetchJoke() // {setup: "Why did the invisible man turn down the job offer?", punchline: "He couldn't see himself doing it"}
    message.channel.send(`${data.setup}\n${data.punchline}`)
@@ -74,7 +87,7 @@ client.login("Your Token Here");
    message.channel.send(data)
 ```
 
-<b>fetchMeme()</b>: Returns random meme. Data is fetched in the form of fetchMeme().title (Title of meme) and fetchMeme().image (Image of the meme).
+<b>fetchMeme()</b>: Returns random meme. Returns data.title (meme title) and data.image (meme image).
 ```javascript
    let data = await something.fetchMeme() // {title: "me_irl", image: "https://i.redd.it/9pi03fh30wt61.png"}
    message.channel.send(`${data.title}\n${data.image}`)
