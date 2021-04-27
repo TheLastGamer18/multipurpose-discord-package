@@ -237,7 +237,7 @@ While instantiating the package, you can use some options which ease up your wor
 
 <br>
 
-# NSFW methods.
+# NSFW methods (Anime only).
 
 <b>fetchNSFWNeko()</b>: Returns random nsfw neko image.
 ```javascript
@@ -254,6 +254,36 @@ While instantiating the package, you can use some options which ease up your wor
 <b>fetchNSFWWaifu()</b>: Returns random nsfw waifu image.
 ```javascript
    let data = await something.fetchNSFWWaifu() // "https://i.waifu.pics/jjc***d.png"
+   message.channel.send(data)
+```
+
+<b>fetchHentaiGif()</b>: Returns random hentai gif.
+```javascript
+   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/Random_hentai_gif/Random_hentai_gif**_*227.gif"
+   message.channel.send(data)
+```
+
+<b>fetchLesbianGif()</b>: Returns random lesbian gif.
+```javascript
+   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/les/On****54.gif"
+   message.channel.send(data)
+```
+
+<b>fetchBoobsGif()</b>: Returns random boobs gif.
+```javascript
+   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/bo**s/boob***87.gif"
+   message.channel.send(data)
+```
+
+<b>fetchTits()</b>: Returns random tits image.
+```javascript
+   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/tits/ti***6.jpg"
+   message.channel.send(data)
+```
+
+<b>fetchNSFWAvatar()</b>: Returns random nsfw avatar.
+```javascript
+   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/nsfw_avatar/ero_****ar_7.png"
    message.channel.send(data)
 ```
 <br>
