@@ -58,3 +58,7 @@
 
 # 0.1.4
 - Added ```fetchHentaiGif()```, ```fetchLesbianGif()```, ```fetchBoobsGif()```, ```fetchTits()``` and ```fetchNSFWAvatar()```
+
+# 0.1.5 
+- Fixed readme as it had incorrect methods in example.
+- Minor improvements in readme.
