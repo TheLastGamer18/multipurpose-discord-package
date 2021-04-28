@@ -2,13 +2,10 @@
 
 # A package that is helpful in bot making! Make commands easily using this package.
 
-# Note:
-- If you are facing any type of bugs with any of the methods, report it [here](https://github.com/TheLastGamer18/multipurpose-discord-package/issues).
+# Reasons to use this package:
+- It will work with any version and is customizable! The methods return only the data, and how to use that data is depended upon you! The package is frequently updated.
 
-# Reasons to use this package.
-- This package will work with any version! Because the methods return only the data, and how to represent that data is depended upon you! The package is frequently updated.
-
-# Example
+# Example code
 ```javascript
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -20,28 +17,19 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
-   if(message.content.startsWith("!joke")) {
-     
-     let joke = await something.fetchJoke();
-     let embed = new discord.MessageEmbed()
-     .setTitle(joke.setup)
-     .setDescription(joke.punchline)
-     .setColor("RANDOM")
-     message.channel.send(embed)
-     
-   } else if (message.content.startsWith("!neko")) {
-     
+    if (message.content.startsWith("!neko")) {
+    
      let neko = await something.fetchNeko();
-     let embed = new discord.MessageEmbed()
+     let embed = new Discord.MessageEmbed()
      .setTitle("Neko!")
      .setImage(neko)
      .setColor("RANDOM")
      message.channel.send(embed)
      
    } else if (message.content.startsWith("!meme")) {
-     
+   
      let meme = await something.fetchMeme();
-     let embed = new discord.MessageEmbed()
+     let embed = new Discord.MessageEmbed()
      .setTitle(meme.title)
      .setImage(meme.image)
      .setColor("RANDOM")
@@ -55,17 +43,15 @@ client.login("Your Token Here");
 <br>
 
 # Constructor options.
-While instantiating the package, you can use some options which ease up your work more!
+
 ```javascript
    const { Something } = require("multipurpose-discord-package")
    const something = new Something({ sendAsEmbed: true, embedColor: 0x00ff00 })
 ```
-- sendAsEmbed: it will make the package send the data using a pre-made embed, so all you need to do is use a method you want and directly send it into a channel and it will be an embed! Personally, it is preferred to keep this option off and to use manually made embeds are you can't add anything in the pre-made embeds.
+- sendAsEmbed: will make the package send the data using a pre-made embed, just use a method and send it directly, it will be an embed! It is preferred to keep this option off and to use manually made embeds are you can't add anything in the pre-made embeds.
 - embedColor: sets the color of your embed to provided hex code. If left empty it will choose a random color. Can only be used when sendAsEmbed is enabled.
 
 <br>
-
-# Methods.
 
 # Fetching methods.
 
@@ -265,27 +251,30 @@ While instantiating the package, you can use some options which ease up your wor
 
 <b>fetchLesbianGif()</b>: Returns random lesbian gif.
 ```javascript
-   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/les/On****54.gif"
+   let data = await something.fetchLesbianGif() // "https://cdn.nekos.life/les/On****54.gif"
    message.channel.send(data)
 ```
 
 <b>fetchBoobsGif()</b>: Returns random boobs gif.
 ```javascript
-   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/bo**s/boob***87.gif"
+   let data = await something.fetchBoobsGif() // "https://cdn.nekos.life/bo**s/boob***87.gif"
    message.channel.send(data)
 ```
 
 <b>fetchTits()</b>: Returns random tits image.
 ```javascript
-   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/tits/ti***6.jpg"
+   let data = await something.fetchTits() // "https://cdn.nekos.life/tits/ti***6.jpg"
    message.channel.send(data)
 ```
 
 <b>fetchNSFWAvatar()</b>: Returns random nsfw avatar.
 ```javascript
-   let data = await something.fetchHentaiGif() // "https://cdn.nekos.life/nsfw_avatar/ero_****ar_7.png"
+   let data = await something.fetchNSFWAvatar() // "https://cdn.nekos.life/nsfw_avatar/ero_****ar_7.png"
    message.channel.send(data)
 ```
 <br>
+
+# Note:
+- If you are facing any type of bugs with any of the methods, report it [here](https://github.com/TheLastGamer18/multipurpose-discord-package/issues).
 
 ## Want to contribute? Feel free to make a pull request [here](https://github.com/TheLastGamer18/multipurpose-discord-package) and I will be happy to review it.
